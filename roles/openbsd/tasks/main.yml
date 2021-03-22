@@ -1,0 +1,5 @@
+- name: set installurl
+  import_tasks: set_installurl.yml
+
+- name: install python
+  import_tasks: install_python.yml

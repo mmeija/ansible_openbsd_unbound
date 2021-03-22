@@ -1,0 +1,13 @@
+- name: create cidr for use in unbound cfg
+  import_tasks: get_cidr.yml
+
+- name: download blacklist
+  import_tasks: download_blacklist.yml
+
+- name: send local static dns overrides
+  import_tasks: local_dns.yml
+
+- name: start unbound
+  import_tasks: start_unbound.yml
+
+

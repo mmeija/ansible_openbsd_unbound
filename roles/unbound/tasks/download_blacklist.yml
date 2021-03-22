@@ -1,0 +1,5 @@
+- name: Download generated blacklist file from local mirror
+  get_url:
+    url: "{{ blacklist_url }}"
+    dest: /var/unbound/etc/unbound-nxdomain.blacklist
+  

@@ -1,0 +1,13 @@
+---
+- hosts: dns-test-1
+  gather_facts: true
+  roles:
+  - role: openbsd
+    vars:
+      ansible_connection: paramiko
+      python_package: python3
+      installurl: http://ftp.ca.openbsd.org/pub/OpenBSD
+      ansible_python_interpreter: /usr/local/bin/python3
+  - role: unbound
+    vars:
+      blacklist_url: https://www.example.com/unbound-nxdomain.blacklist

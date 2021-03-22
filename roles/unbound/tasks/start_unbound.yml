@@ -1,0 +1,25 @@
+- name: install unbound
+  package:
+    name: "unbound"
+    state: latest
+
+- name: setup unbound.conf
+  template:
+    src: unbound.conf.j2
+    dest: /var/unbound/etc/unbound.conf
+    owner: root
+    group: wheel
+    mode: -rw-r--r--
+  register: unbound_conf
+
+- name: restart unbound
+  service:
+    name: unbound
+    state: restarted
+  when: unbound_conf.changed
+
+- name: start unbound
+  service:
+    name: "unbound"
+    state: started
+    enabled: True

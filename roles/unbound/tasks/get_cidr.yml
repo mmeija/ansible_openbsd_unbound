@@ -1,0 +1,5 @@
+- name: build mask_cidr var
+  set_fact:
+    mask_cidr: "{{ ip | ipaddr('prefix') }}"
+  vars:
+    ip: "{{ ansible_default_ipv4.address }}/{{ansible_default_ipv4.netmask }}"

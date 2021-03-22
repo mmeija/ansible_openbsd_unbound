@@ -1,0 +1,4 @@
+---
+  
+- name: set /etc/installurl
+  raw: echo "{{ installurl }}" > /etc/installurl

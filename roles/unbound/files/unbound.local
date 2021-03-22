@@ -1,0 +1,2 @@
+#local-zone: "site.example.com.net." static
+#local-data: "mail.example.com. IN A 192.0.2.1"

@@ -1,0 +1,5 @@
+- name: create unbound config for local network dns entries
+  copy:
+    src: unbound.local
+    dest: /var/unbound/etc/unbound.local
+
