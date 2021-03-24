@@ -1,8 +1,3 @@
-- name: install unbound
-  package:
-    name: "unbound"
-    state: latest
-
 - name: setup unbound.conf
   template:
     src: unbound.conf.j2
